@@ -33,7 +33,7 @@ const trigger: Trigger<typeof Workflow.definition> = {
                 statement: "{{data.text}} CONTAINS 'test'",
               },
             ],
-          }
+          },
         ],
       },
     },

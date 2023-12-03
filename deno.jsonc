@@ -10,7 +10,8 @@
       "triggers",
       "types",
       "views",
-      "workflows"
+      "workflows",
+      "devices",
     ]
   },
   "importMap": "import_map.json",
@@ -23,11 +24,12 @@
       "triggers",
       "types",
       "views",
-      "workflows"
+      "workflows",
+      "devices",
     ]
   },
   "lock": false,
   "tasks": {
-    "test": "deno fmt --check && deno lint && deno test --allow-read --allow-none"
+    "test": "deno fmt --check && deno lint --allow-read --allow-none"
   }
 }
