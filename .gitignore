@@ -1,0 +1,7 @@
+dist
+package
+.slack
+
+.env
+.idea
+.DS_Store
