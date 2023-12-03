@@ -3,11 +3,15 @@ import Workflow from "./workflows/workflow.ts";
 
 export default Manifest({
   name: "release-party",
-  description: "A blank template for building Slack apps with Deno",
-  icon: "assets/default_new_app_icon.png",
+  description:
+    "Trigger the Slack release completion message to light up the smart light bulb",
+  icon: "assets/icon.png",
   functions: [],
   workflows: [Workflow],
-  outgoingDomains: ["api.switch-bot.com"],
+  outgoingDomains: [
+    "api.switch-bot.com",
+    "192.0.0.0", // your Philips Hue Bridge IP address
+  ],
   botScopes: [
     "groups:history",
     "channels:history",

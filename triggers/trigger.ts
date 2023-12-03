@@ -6,7 +6,7 @@ import {
 } from "deno-slack-api/mod.ts";
 import Workflow from "../workflows/workflow.ts";
 
-const _test_channel_id = "C059CTRJNVD";
+const _test_channel_id = "CXXXX";
 
 const trigger: Trigger<typeof Workflow.definition> = {
   type: TriggerTypes.Event,
@@ -21,6 +21,7 @@ const trigger: Trigger<typeof Workflow.definition> = {
         operator: "AND",
         inputs: [
           {
+            // triggers only bot messages
             statement: "{{data.user_id}} == null",
           },
           {
