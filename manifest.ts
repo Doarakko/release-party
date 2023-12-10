@@ -10,7 +10,6 @@ export default Manifest({
   workflows: [Workflow],
   outgoingDomains: [
     "api.switch-bot.com",
-    "192.0.0.0", // your Philips Hue Bridge IP address
   ],
   botScopes: [
     "groups:history",

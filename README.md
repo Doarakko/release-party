@@ -1,31 +1,15 @@
 # release-party
 
-Trigger the Slack release completion message to light up the smart light bulb.
+Trigger the Slack message to light up the SwitchBot Color Bulb.
 
 ## Requirements
 
 - Slack with paid plan
 - Slack CLI
-- curl
-
-### Smart light bulb
-
-Compatible with the following smart bulbs.
-
-#### SwitchBot
-
 - [SwitchBot Color Bulb](https://www.switch-bot.com/products/switchbot-color-bulb)
 - SwitchBot API Key
   - [SwitchBot Help Center: How to obtain a Token?](https://support.switch-bot.com/hc/en-us/articles/12822710195351-How-to-obtain-a-Token-)
 - SwitchBot device id
-
-#### Philips Hue
-
-- [Philips Hue Bridge](https://www.philips-hue.com/en-us/p/hue-bridge/046677458478)
-- [Philips Hue Smart Bulbs](https://www.philips-hue.com/en-hk/products/smart-lightbulbs)
-- Philips Hue Bridge IP address
-- Philips username and device id
-  - [Philips Hue Developer: Getting started](https://developers.meethue.com/develop/get-started-2/)
 
 ## Usage
 
@@ -34,20 +18,9 @@ Compatible with the following smart bulbs.
    ```sh
    git clone https://github.com/Doarakko/release-party
    cd release-party
-   cp .env.example .env
    ```
 
-2. Enter your environmental variables to `.env`
-
-   Please specify your device.
-   There is no need to change environment variables for devices that are not used.
-
-   ```shell
-    # DEVICE=SwitchBot
-    DEVICE=Philips
-   ```
-
-3. Enter your release message and channel ids to `triggers/trigger.ts`
+2. Enter your release message and channel ids to `triggers/trigger.ts`
 
    ```ts
      event: {
@@ -79,12 +52,18 @@ Compatible with the following smart bulbs.
      },
    ```
 
-4. Deploy
+3. Deploy
 
    ```sh
    slack deploy
    slack trigger create
+
+   # SwitchBot
+   slack env add SWITCHBOT_API_KEY <your key>
+   slack env add SWITCHBOT_DEVICE_ID <your id>
    ```
+
+   When updating the trigger, run the following command.
 
    ```sh
    slack trigger update --trigger-id=yyyy
@@ -94,10 +73,18 @@ Compatible with the following smart bulbs.
 
 ### Run on local
 
-```sh
-slack run
-slack trigger create
-```
+1. Enter your environmental variables to `.env`
+
+    ```sh
+    cp .env.example .env
+    ```
+
+2. Run
+
+   ```sh
+   slack run
+   slack trigger create
+   ```
 
 ### Check using Slack incoming webhook
 
