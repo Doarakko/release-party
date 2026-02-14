@@ -107,3 +107,8 @@ curl -X POST -H 'Content-type: application/json' --data '{"command": "turnOn"}' 
 # off
 curl -X POST -H 'Content-type: application/json' --data '{"command": "turnOff"}' "https://api.switch-bot.com/v1.0/devices/<SWITCHBOT_DEVICE_ID>/commands" -H "Authorization: <SWITCHBOT_API_KEY>"
 ```
+
+## Related
+
+- [release-party-5.0](https://github.com/Doarakko/release-party-5.0) - Philips Hue version using Raspberry Pi
+- [職場を明るくする](https://devblog.thebase.in/entry/work-happy)
