@@ -2,6 +2,8 @@
 
 Trigger the Slack message to light up the SwitchBot Color Bulb.
 
+![example](example.gif)
+
 ## Requirements
 
 - Slack with paid plan
